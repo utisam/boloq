@@ -1,7 +1,6 @@
 # boloq
 
-A C++ project template of [CMake](http://www.cmake.org/)
-to use boost unittest and git.
+BDD/ZDD library
 
 ## How to use
 
