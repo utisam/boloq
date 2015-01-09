@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['new_5fvar',['new_var',['../classboloq_1_1basic__boolean__function__cache.html#afd011bd09e703a5d37b2678edddf79a9',1,'boloq::basic_boolean_function_cache::new_var(const label_type &amp;_label, const node_ptr &amp;t, const node_ptr &amp;e)'],['../classboloq_1_1basic__boolean__function__cache.html#a0d7378df7f11e29efcf6327c543a1b56',1,'boloq::basic_boolean_function_cache::new_var(const label_type &amp;_label)'],['../classboloq_1_1basic__combination__cache.html#a31a1e726a42a88d400cb83fcd36008e4',1,'boloq::basic_combination_cache::new_var(const label_type &amp;_label, const node_ptr &amp;t, const node_ptr &amp;e)'],['../classboloq_1_1basic__combination__cache.html#a4661d1436a4038b6b8c276c06b20036b',1,'boloq::basic_combination_cache::new_var(const label_type &amp;_label)']]]
+];

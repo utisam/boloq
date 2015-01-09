@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>libboloq: boloq/details/node.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libboloq
+   </div>
+   <div id="projectbrief">A library to replesent binary functions using Binary Decision Diagram.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_21a893a0de21cafd5b14fbbdfc611dc6.html">boloq</a></li><li class="navelem"><a class="el" href="dir_4c4ae729fa7e77b71aa29c3f96acba21.html">details</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">node.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceboloq.html">boloq</a> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> LT, <span class="keyword">class</span> IT&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboloq_1_1basic__node.html">basic_node</a> : <span class="keyword">public</span> std::enable_shared_from_this&lt;const basic_node&lt;LT, IT&gt;&gt; {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">using</span> <a class="code" href="classboloq_1_1basic__node.html">self_type</a> = <a class="code" href="classboloq_1_1basic__node.html">basic_node&lt;LT, IT&gt;</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">   15</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">index_type</a> = IT;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">   17</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">label_type</a> = LT;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">   19</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> = std::shared_ptr&lt;const self_type&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">index_type</a> _index;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">label_type</a> _label;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> _then_node;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> _else_node;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> <span class="keyword">self</span>() <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> this-&gt;shared_from_this();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a1fb34f92e0b581f68352b826d7c714d1">   40</a></span>&#160;    <span class="keyword">explicit</span> constexpr <a class="code" href="classboloq_1_1basic__node.html#a1fb34f92e0b581f68352b826d7c714d1">basic_node</a>(<span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">index_type</a>&amp; i) :</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            _index(i), _label(<a class="code" href="namespacestd.html">std</a>::numeric_limits&lt;<a class="code" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">label_type</a>&gt;::max()),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            _then_node(nullptr), _else_node(nullptr)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a57b99ce832f173f08bc34b0e96d4e5e7">   50</a></span>&#160;    constexpr <a class="code" href="classboloq_1_1basic__node.html#a57b99ce832f173f08bc34b0e96d4e5e7">basic_node</a>(<span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">index_type</a>&amp; i, <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">label_type</a>&amp; l, <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a>&amp; _then, <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a>&amp; _else) :</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        _index(i), _label(l), _then_node(_then), _else_node(_else)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a675315cd3a821bc9702bc00913d35dc4">   57</a></span>&#160;    constexpr <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">index_type</a>&amp; <a class="code" href="classboloq_1_1basic__node.html#a675315cd3a821bc9702bc00913d35dc4">index</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> _index;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#ac440181751252f49058518bcb50c577a">   64</a></span>&#160;    constexpr <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">label_type</a>&amp; <a class="code" href="classboloq_1_1basic__node.html#ac440181751252f49058518bcb50c577a">label</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> _label;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a77edb6f9eb9b0402247541e5e5d631bf">   69</a></span>&#160;    constexpr <span class="keywordtype">bool</span> <a class="code" href="classboloq_1_1basic__node.html#a77edb6f9eb9b0402247541e5e5d631bf">is_terminal</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code" href="classboloq_1_1basic__node.html#a675315cd3a821bc9702bc00913d35dc4">index</a>() &lt; 2;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#aaef5040dc9c0deed5ecc52b1c6b1a565">   72</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> <a class="code" href="classboloq_1_1basic__node.html#aaef5040dc9c0deed5ecc52b1c6b1a565">then_node</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classboloq_1_1basic__node.html#a77edb6f9eb9b0402247541e5e5d631bf">is_terminal</a>()) <span class="keywordflow">return</span> <span class="keyword">self</span>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> _then_node;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a632d69a3dc244b5d58e6edbdfd67294e">   77</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">node_ptr</a> <a class="code" href="classboloq_1_1basic__node.html#a632d69a3dc244b5d58e6edbdfd67294e">else_node</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classboloq_1_1basic__node.html#a77edb6f9eb9b0402247541e5e5d631bf">is_terminal</a>()) <span class="keywordflow">return</span> <span class="keyword">self</span>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> _else_node;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> V&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classboloq_1_1basic__node.html#a374cbb6ad8fce1ca8f7b8553c5496ed0">   86</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboloq_1_1basic__node.html#a374cbb6ad8fce1ca8f7b8553c5496ed0">accept</a>(V&amp; visitor)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        visitor(<span class="keyword">self</span>());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="namespaceboloq.html#a08f14b7ac02aa1995de9a9495d31605d">   94</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classboloq_1_1basic__node.html">node</a> = <a class="code" href="classboloq_1_1basic__node.html">basic_node&lt;size_t, size_t&gt;</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">struct </span>null_deleter {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> operator()(<span class="keywordtype">void</span> <span class="keyword">const</span> *)<span class="keyword"> const </span>{}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="ttc" id="namespaceboloq_html"><div class="ttname"><a href="namespaceboloq.html">boloq</a></div><div class="ttdoc">boloq の名前空間 </div><div class="ttdef"><b>Definition:</b> boolean_function.h:3</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a374cbb6ad8fce1ca8f7b8553c5496ed0"><div class="ttname"><a href="classboloq_1_1basic__node.html#a374cbb6ad8fce1ca8f7b8553c5496ed0">boloq::basic_node::accept</a></div><div class="ttdeci">void accept(V &amp;visitor) const </div><div class="ttdoc">visitorを受理します </div><div class="ttdef"><b>Definition:</b> node.h:86</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_aaef5040dc9c0deed5ecc52b1c6b1a565"><div class="ttname"><a href="classboloq_1_1basic__node.html#aaef5040dc9c0deed5ecc52b1c6b1a565">boloq::basic_node::then_node</a></div><div class="ttdeci">const node_ptr then_node() const </div><div class="ttdef"><b>Definition:</b> node.h:72</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_acdda950e583fad88bde78170c27ec4c3"><div class="ttname"><a href="classboloq_1_1basic__node.html#acdda950e583fad88bde78170c27ec4c3">boloq::basic_node::node_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; const self_type &gt; node_ptr</div><div class="ttdef"><b>Definition:</b> node.h:19</div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> boolean_function.h:215</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a77edb6f9eb9b0402247541e5e5d631bf"><div class="ttname"><a href="classboloq_1_1basic__node.html#a77edb6f9eb9b0402247541e5e5d631bf">boloq::basic_node::is_terminal</a></div><div class="ttdeci">constexpr bool is_terminal() const </div><div class="ttdoc">このノードが終端かどうかを表します </div><div class="ttdef"><b>Definition:</b> node.h:69</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a57b99ce832f173f08bc34b0e96d4e5e7"><div class="ttname"><a href="classboloq_1_1basic__node.html#a57b99ce832f173f08bc34b0e96d4e5e7">boloq::basic_node::basic_node</a></div><div class="ttdeci">constexpr basic_node(const index_type &amp;i, const label_type &amp;l, const node_ptr &amp;_then, const node_ptr &amp;_else)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> node.h:50</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a1fb34f92e0b581f68352b826d7c714d1"><div class="ttname"><a href="classboloq_1_1basic__node.html#a1fb34f92e0b581f68352b826d7c714d1">boloq::basic_node::basic_node</a></div><div class="ttdeci">constexpr basic_node(const index_type &amp;i)</div><div class="ttdoc">定節点を生成するコンストラクタ </div><div class="ttdef"><b>Definition:</b> node.h:40</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a41d4b81e57b664a67fc8e5006fa90d8d"><div class="ttname"><a href="classboloq_1_1basic__node.html#a41d4b81e57b664a67fc8e5006fa90d8d">boloq::basic_node::index_type</a></div><div class="ttdeci">IT index_type</div><div class="ttdoc">インデックスを表す型 </div><div class="ttdef"><b>Definition:</b> node.h:15</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a632d69a3dc244b5d58e6edbdfd67294e"><div class="ttname"><a href="classboloq_1_1basic__node.html#a632d69a3dc244b5d58e6edbdfd67294e">boloq::basic_node::else_node</a></div><div class="ttdeci">const node_ptr else_node() const </div><div class="ttdef"><b>Definition:</b> node.h:77</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_a675315cd3a821bc9702bc00913d35dc4"><div class="ttname"><a href="classboloq_1_1basic__node.html#a675315cd3a821bc9702bc00913d35dc4">boloq::basic_node::index</a></div><div class="ttdeci">constexpr const index_type &amp; index() const </div><div class="ttdoc">ノードの内容一意に定まる値を返します </div><div class="ttdef"><b>Definition:</b> node.h:57</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html"><div class="ttname"><a href="classboloq_1_1basic__node.html">boloq::basic_node</a></div><div class="ttdoc">基本的なノードのクラス </div><div class="ttdef"><b>Definition:</b> node.h:9</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_ac440181751252f49058518bcb50c577a"><div class="ttname"><a href="classboloq_1_1basic__node.html#ac440181751252f49058518bcb50c577a">boloq::basic_node::label</a></div><div class="ttdeci">constexpr const label_type &amp; label() const </div><div class="ttdoc">ノードのラベルを返します </div><div class="ttdef"><b>Definition:</b> node.h:64</div></div>
+<div class="ttc" id="classboloq_1_1basic__node_html_aa6c54935988dd0ce1231185a6f18ab34"><div class="ttname"><a href="classboloq_1_1basic__node.html#aa6c54935988dd0ce1231185a6f18ab34">boloq::basic_node::label_type</a></div><div class="ttdeci">LT label_type</div><div class="ttdoc">ラベルを表す型 </div><div class="ttdef"><b>Definition:</b> node.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

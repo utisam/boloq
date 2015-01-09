@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>libboloq: boloq::basic_boolean_function&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">libboloq
+   </div>
+   <div id="projectbrief">A library to replesent binary functions using Binary Decision Diagram.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="namespaces.html"><span>名前空間</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceboloq.html">boloq</a></li><li class="navelem"><a class="el" href="classboloq_1_1basic__boolean__function.html">basic_boolean_function</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="classboloq_1_1basic__boolean__function-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">boloq::basic_boolean_function&lt; T &gt; クラステンプレート</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>二分決定図を操作する基本的なクラスです  
+ <a href="classboloq_1_1basic__boolean__function.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="details_2boolean__function_8h_source.html">boolean_function.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aad4022780cee4c71a7d3aa0c95ddc9af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad4022780cee4c71a7d3aa0c95ddc9af"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#aad4022780cee4c71a7d3aa0c95ddc9af">node_ptr</a> = typename table_type::node_ptr</td></tr>
+<tr class="memdesc:aad4022780cee4c71a7d3aa0c95ddc9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">実際に操作されるノードの型 <br /></td></tr>
+<tr class="separator:aad4022780cee4c71a7d3aa0c95ddc9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfffee7d3b07ac877f831b3e5aef664"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#aacfffee7d3b07ac877f831b3e5aef664">label_type</a> = typename table_type::node_type::label_type</td></tr>
+<tr class="memdesc:aacfffee7d3b07ac877f831b3e5aef664"><td class="mdescLeft">&#160;</td><td class="mdescRight">ラベルの型を表します  <a href="#aacfffee7d3b07ac877f831b3e5aef664">[詳解]</a><br /></td></tr>
+<tr class="separator:aacfffee7d3b07ac877f831b3e5aef664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:abee83a602dea94990f503ba627148e4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abee83a602dea94990f503ba627148e4e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#abee83a602dea94990f503ba627148e4e">basic_boolean_function</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html#aacfffee7d3b07ac877f831b3e5aef664">label_type</a> &amp;_label)</td></tr>
+<tr class="memdesc:abee83a602dea94990f503ba627148e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ <br /></td></tr>
+<tr class="separator:abee83a602dea94990f503ba627148e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b02b63fe81527eb65fb804d6e0e576b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b02b63fe81527eb65fb804d6e0e576b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a0b02b63fe81527eb65fb804d6e0e576b">basic_boolean_function</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html#aad4022780cee4c71a7d3aa0c95ddc9af">node_ptr</a> &amp;r)</td></tr>
+<tr class="memdesc:a0b02b63fe81527eb65fb804d6e0e576b"><td class="mdescLeft">&#160;</td><td class="mdescRight">visitor 内で生成するためのコンストラクタ <br /></td></tr>
+<tr class="separator:a0b02b63fe81527eb65fb804d6e0e576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd836c33796ef81698c4743b88d3748"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcd836c33796ef81698c4743b88d3748"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#abcd836c33796ef81698c4743b88d3748">ite</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;then_node, const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;else_node) const </td></tr>
+<tr class="memdesc:abcd836c33796ef81698c4743b88d3748"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITE関数を実行します <br /></td></tr>
+<tr class="separator:abcd836c33796ef81698c4743b88d3748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd10c068919f653f5706adcc506143f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#aecd10c068919f653f5706adcc506143f">operator==</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o) const </td></tr>
+<tr class="memdesc:aecd10c068919f653f5706adcc506143f"><td class="mdescLeft">&#160;</td><td class="mdescRight">同じ論理関数を表現しているか比較します  <a href="#aecd10c068919f653f5706adcc506143f">[詳解]</a><br /></td></tr>
+<tr class="separator:aecd10c068919f653f5706adcc506143f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b88c3376793b03e0a4ea2ca4d0dca8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#ae0b88c3376793b03e0a4ea2ca4d0dca8">operator!=</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o) const </td></tr>
+<tr class="memdesc:ae0b88c3376793b03e0a4ea2ca4d0dca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">違う論理関数を表現しているか比較します  <a href="#ae0b88c3376793b03e0a4ea2ca4d0dca8">[詳解]</a><br /></td></tr>
+<tr class="separator:ae0b88c3376793b03e0a4ea2ca4d0dca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7c1bd4af40cabc553ac5e4cae6b54f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e7c1bd4af40cabc553ac5e4cae6b54f"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a5e7c1bd4af40cabc553ac5e4cae6b54f">operator~</a> () const </td></tr>
+<tr class="memdesc:a5e7c1bd4af40cabc553ac5e4cae6b54f"><td class="mdescLeft">&#160;</td><td class="mdescRight">not演算を行った結果を返します <br /></td></tr>
+<tr class="separator:a5e7c1bd4af40cabc553ac5e4cae6b54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4395bd92778f6c628e72f5dd4d85ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee4395bd92778f6c628e72f5dd4d85ae"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#aee4395bd92778f6c628e72f5dd4d85ae">operator&amp;</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o) const </td></tr>
+<tr class="memdesc:aee4395bd92778f6c628e72f5dd4d85ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">and演算を行った結果を返します <br /></td></tr>
+<tr class="separator:aee4395bd92778f6c628e72f5dd4d85ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0067fbd2c79937411cdb8b21c9055f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf0067fbd2c79937411cdb8b21c9055f"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#abf0067fbd2c79937411cdb8b21c9055f">operator&amp;=</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o)</td></tr>
+<tr class="memdesc:abf0067fbd2c79937411cdb8b21c9055f"><td class="mdescLeft">&#160;</td><td class="mdescRight">and演算を適用します <br /></td></tr>
+<tr class="separator:abf0067fbd2c79937411cdb8b21c9055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01be86977e43f7f25da5a47a62e2b9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#af01be86977e43f7f25da5a47a62e2b9d">operator|</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o) const </td></tr>
+<tr class="separator:af01be86977e43f7f25da5a47a62e2b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc6cc9a81d94171c0299be6c5a9f12b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dc6cc9a81d94171c0299be6c5a9f12b"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a2dc6cc9a81d94171c0299be6c5a9f12b">operator|=</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o)</td></tr>
+<tr class="memdesc:a2dc6cc9a81d94171c0299be6c5a9f12b"><td class="mdescLeft">&#160;</td><td class="mdescRight">or演算を適用します <br /></td></tr>
+<tr class="separator:a2dc6cc9a81d94171c0299be6c5a9f12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f6ffa9e029d6d368b55dfea1f616c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a49f6ffa9e029d6d368b55dfea1f616c4">operator^</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o) const </td></tr>
+<tr class="separator:a49f6ffa9e029d6d368b55dfea1f616c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a7339fb88979237eb98d11fa3adeaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45a7339fb88979237eb98d11fa3adeaa"></a>
+<a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a45a7339fb88979237eb98d11fa3adeaa">operator^=</a> (const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;o)</td></tr>
+<tr class="memdesc:a45a7339fb88979237eb98d11fa3adeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">or演算を適用します <br /></td></tr>
+<tr class="separator:a45a7339fb88979237eb98d11fa3adeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622c21f7e793493c6d615e089a495455"><td class="memTemplParams" colspan="2">template&lt;class V &gt; </td></tr>
+<tr class="memitem:a622c21f7e793493c6d615e089a495455"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a622c21f7e793493c6d615e089a495455">accept</a> (V &amp;visitor) const </td></tr>
+<tr class="memdesc:a622c21f7e793493c6d615e089a495455"><td class="mdescLeft">&#160;</td><td class="mdescRight">visitorを受理します  <a href="#a622c21f7e793493c6d615e089a495455">[詳解]</a><br /></td></tr>
+<tr class="separator:a622c21f7e793493c6d615e089a495455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090795fc6120fdfec60b0f692b643abc"><td class="memTemplParams" colspan="2"><a class="anchor" id="a090795fc6120fdfec60b0f692b643abc"></a>
+template&lt;class AssignT &gt; </td></tr>
+<tr class="memitem:a090795fc6120fdfec60b0f692b643abc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a090795fc6120fdfec60b0f692b643abc">execute</a> (const AssignT &amp;assign) const </td></tr>
+<tr class="memdesc:a090795fc6120fdfec60b0f692b643abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">論理関数を評価します <br /></td></tr>
+<tr class="separator:a090795fc6120fdfec60b0f692b643abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9f6d3d87d15481f61bf07f9b317a0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc9f6d3d87d15481f61bf07f9b317a0a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#abc9f6d3d87d15481f61bf07f9b317a0a">is_wire</a> () const </td></tr>
+<tr class="memdesc:abc9f6d3d87d15481f61bf07f9b317a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">f(x) = x かどうかを判定します <br /></td></tr>
+<tr class="separator:abc9f6d3d87d15481f61bf07f9b317a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35e085a21334a8ee6225bee84dfd863"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af35e085a21334a8ee6225bee84dfd863"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#af35e085a21334a8ee6225bee84dfd863">is_negation</a> () const </td></tr>
+<tr class="memdesc:af35e085a21334a8ee6225bee84dfd863"><td class="mdescLeft">&#160;</td><td class="mdescRight">論理否定を表すかどうかを判定します <br /></td></tr>
+<tr class="separator:af35e085a21334a8ee6225bee84dfd863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a478bff78b614915aebf63d41c95e45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a478bff78b614915aebf63d41c95e45"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a9a478bff78b614915aebf63d41c95e45">is_conjunction</a> () const </td></tr>
+<tr class="memdesc:a9a478bff78b614915aebf63d41c95e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">論理積を表すかどうかを判定します <br /></td></tr>
+<tr class="separator:a9a478bff78b614915aebf63d41c95e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd5764fb3fb0ad62a429340ff787800"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcd5764fb3fb0ad62a429340ff787800"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#adcd5764fb3fb0ad62a429340ff787800">is_disjunction</a> () const </td></tr>
+<tr class="memdesc:adcd5764fb3fb0ad62a429340ff787800"><td class="mdescLeft">&#160;</td><td class="mdescRight">論理和を表すかどうかを判定します <br /></td></tr>
+<tr class="separator:adcd5764fb3fb0ad62a429340ff787800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893c5a72af64f2dd1274f78676571500"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a893c5a72af64f2dd1274f78676571500"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a893c5a72af64f2dd1274f78676571500">is_exclusive_disjunction</a> () const </td></tr>
+<tr class="memdesc:a893c5a72af64f2dd1274f78676571500"><td class="mdescLeft">&#160;</td><td class="mdescRight">排他的論理和を表すかどうかを判定します <br /></td></tr>
+<tr class="separator:a893c5a72af64f2dd1274f78676571500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a546077a21e5eb824abfefb827e53c159"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a546077a21e5eb824abfefb827e53c159"></a>
+static const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#a546077a21e5eb824abfefb827e53c159">one</a> ()</td></tr>
+<tr class="memdesc:a546077a21e5eb824abfefb827e53c159"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 定節点 <br /></td></tr>
+<tr class="separator:a546077a21e5eb824abfefb827e53c159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f2ec6424f43bfbc204662ef6602db9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0f2ec6424f43bfbc204662ef6602db9"></a>
+static const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboloq_1_1basic__boolean__function.html#aa0f2ec6424f43bfbc204662ef6602db9">zero</a> ()</td></tr>
+<tr class="memdesc:aa0f2ec6424f43bfbc204662ef6602db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 定節点 <br /></td></tr>
+<tr class="separator:aa0f2ec6424f43bfbc204662ef6602db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class boloq::basic_boolean_function&lt; T &gt;</h3>
+
+<p>二分決定図を操作する基本的なクラスです </p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a class="anchor" id="aacfffee7d3b07ac877f831b3e5aef664"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::<a class="el" href="classboloq_1_1basic__boolean__function.html#aacfffee7d3b07ac877f831b3e5aef664">label_type</a> =  typename table_type::node_type::label_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ラベルの型を表します </p>
+<p>この型は内部で用いられるノードの型に依存します。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="a622c21f7e793493c6d615e089a495455"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;class V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::accept </td>
+          <td>(</td>
+          <td class="paramtype">V &amp;&#160;</td>
+          <td class="paramname"><em>visitor</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>visitorを受理します </p>
+<p>visitorオブジェクトは、node_ptrを引数にした関数インタフェースをもたなくてはいけません </p>
+
+</div>
+</div>
+<a class="anchor" id="ae0b88c3376793b03e0a4ea2ca4d0dca8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>違う論理関数を表現しているか比較します </p>
+<p>この判定はO(1)で行う事ができます。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aecd10c068919f653f5706adcc506143f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>同じ論理関数を表現しているか比較します </p>
+<p>この判定はO(1)で行う事ができます。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a49f6ffa9e029d6d368b55dfea1f616c4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>xor演算を行った結果を返します </p>
+
+</div>
+</div>
+<a class="anchor" id="af01be86977e43f7f25da5a47a62e2b9d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> <a class="el" href="classboloq_1_1basic__boolean__function.html">boloq::basic_boolean_function</a>&lt; T &gt;::operator| </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboloq_1_1basic__boolean__function.html">self_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>or演算を行った結果を返します </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>boloq/details/<a class="el" href="details_2boolean__function_8h_source.html">boolean_function.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>
