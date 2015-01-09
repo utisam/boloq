@@ -1,0 +1,6 @@
+Makefile
+bdd.svg
+drawSVG
+main.o
+.qmake.stash
+drawSVG.app/
