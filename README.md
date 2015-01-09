@@ -1,13 +1,49 @@
 # boloq
 
-BDD/ZDD library
+BDD/ZDD library to replesent binary functions using modern C++ futures
 
-## How to use
+## Getting started
 
-    cd build
+### Requirements
+
+* C++11
+* boost
+
+### Install
+
+    git clone https://github.com/utisam/boloq.git
+    cd boloq/build
     cmake ..
     make -j4 && sudo make install
     sudo ldconfig
+
+### Sample
+
+```c++
+#include <array>
+#include <iostream>
+#include <unordered_set>
+#include <boloq.h>
+using namespace std;
+using namespace boloq;
+
+int main() {
+    boolean_function x('x'), y('y');
+
+    array<boolean_function, 4> fns = {{
+        ~x | ~y, ~(x & y),
+        ~x & ~y, ~(x | y),
+    }};
+
+    // equivalence: O(1)
+    std::cout << std::boolalpha << (fns[0] == fns[1]) << endl; // true
+
+    // hashable
+    unordered_set<boolean_function> fn_set(fns.begin(), fns.end());
+    cout << fn_set.size() << endl; // 2
+    return 0;
+}
+```
 
 ## Develop
 
