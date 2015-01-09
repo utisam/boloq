@@ -1,4 +1,4 @@
-# waf project template
+# boloq
 
 A C++ project template of [CMake](http://www.cmake.org/)
 to use boost unittest and git.
@@ -7,5 +7,16 @@ to use boost unittest and git.
 
     cd build
     cmake ..
+    make -j4 && sudo make install
+    sudo ldconfig
+
+## Develop
+
+    cmake -DCMAKE_BUILD_TYPE=Debug ..
     make -j4
     make test
+
+## Documentation
+
+    cd src
+    doxygen
