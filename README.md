@@ -15,7 +15,6 @@ BDD/ZDD library to replesent binary functions using modern C++ futures
     cd boloq/build
     cmake ..
     make -j4 && sudo make install
-    sudo ldconfig
 
 ### Sample
 
