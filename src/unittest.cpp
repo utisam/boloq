@@ -1,10 +1,12 @@
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MAIN
 #include <boloq.h>
 #include <boloq/io.h>
 
-#define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MAIN
-#include <iostream>
 #include <boost/test/unit_test.hpp>
+#include <array>
+#include <unordered_set>
+#include <iostream>
 
 using namespace std;
 using namespace boloq;
@@ -65,9 +67,37 @@ BOOST_AUTO_TEST_CASE(test_assign_by_array) {
     BOOST_REQUIRE(x.execute(a));
 }
 
+BOOST_AUTO_TEST_CASE(test_hash_test) {
+    boolean_function x('x'), y('y');
+
+    array<boolean_function, 8> fns = {{
+        ~x | ~y, ~(x & y),
+        ~x & ~y, ~(x | y),
+        ~x | y, ~(x & ~y),
+        ~x & y, ~(x | ~y),
+    }};
+
+    hash<boolean_function> hash_fn;
+    for (size_t i = 0; i < fns.size(); i += 2) {
+        BOOST_REQUIRE_EQUAL(fns[i], fns[i + 1]);
+        BOOST_REQUIRE_EQUAL(hash_fn(fns[i]), hash_fn(fns[i + 1]));
+    }
+
+    unordered_set<boolean_function> fn_set(fns.begin(), fns.end());
+    BOOST_REQUIRE_EQUAL(fn_set.size(), 4);
+}
+
 BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(boloq_combination_test)
+
+BOOST_AUTO_TEST_CASE(test_change) {
+    auto f = combination::one();
+    f.change('x');
+    BOOST_REQUIRE_EQUAL(f, combination('x'));
+    auto assigns = assign_generator({{'x'}});
+    for (auto& a : assigns) BOOST_REQUIRE_EQUAL(f.contain(a), a['x']);
+}
 
 BOOST_AUTO_TEST_CASE(test_or) {
     combination x('x'), y('y');
@@ -101,6 +131,24 @@ BOOST_AUTO_TEST_CASE(test_construction) {
     for (auto& a : assigns) {
         BOOST_REQUIRE_EQUAL(f.contain(a), (!a['a'] && !a['b']) || (!a['a'] && !a['c'] && !a['d']));
     }
+}
+
+BOOST_AUTO_TEST_CASE(test_hash_test) {
+    combination x('x'), y('y');
+    combination o = combination::one();
+
+    array<combination, 2> fns = {{
+        x.changed('y'), y.changed('x'),
+    }};
+
+    hash<combination> hash_fn;
+    for (size_t i = 0; i < fns.size(); i += 2) {
+        BOOST_REQUIRE_EQUAL(fns[i], fns[i + 1]);
+        BOOST_REQUIRE_EQUAL(hash_fn(fns[i]), hash_fn(fns[i + 1]));
+    }
+
+    unordered_set<combination> fn_set(fns.begin(), fns.end());
+    BOOST_REQUIRE_EQUAL(fn_set.size(), 1);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

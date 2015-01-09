@@ -10,6 +10,7 @@ class basic_boolean_function {
 private:
     using table_type = T;
     using self_type = basic_boolean_function<table_type>;
+    friend std::hash<self_type>;
 
 public:
     /*!
@@ -211,3 +212,14 @@ using boolean_function = basic_boolean_function<boolean_function_cache>;
 
 }
 
+namespace std {
+
+template<class T>
+struct hash<boloq::basic_boolean_function<T>> {
+    std::hash<typename boloq::basic_boolean_function<T>::node_ptr> hash_fn;
+    size_t operator()(const boloq::basic_boolean_function<T>& bf) const {
+        return hash_fn(bf._root);
+    }
+};
+
+}

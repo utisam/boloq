@@ -10,6 +10,7 @@ class basic_combination {
 private:
     using table_type = T;
     using self_type = basic_combination<table_type>;
+    friend std::hash<self_type>;
 
 public:
     /*!
@@ -170,5 +171,17 @@ public:
  * @brief 標準的なノードを用いる組み合わせ集合です
  */
 using combination = basic_combination<combination_cache>;
+
+}
+
+namespace std {
+
+template<class T>
+struct hash<boloq::basic_combination<T>> {
+    std::hash<typename boloq::basic_combination<T>::node_ptr> hash_fn;
+    size_t operator()(const boloq::basic_combination<T>& bf) const {
+        return hash_fn(bf._root);
+    }
+};
 
 }
