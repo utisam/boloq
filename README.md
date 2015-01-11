@@ -35,7 +35,7 @@ int main() {
     }};
 
     // equivalence: O(1)
-    std::cout << std::boolalpha << (fns[0] == fns[1]) << endl; // true
+    cout << boolalpha << (fns[0] == fns[1]) << endl; // true
 
     // hashable
     unordered_set<boolean_function> fn_set(fns.begin(), fns.end());
