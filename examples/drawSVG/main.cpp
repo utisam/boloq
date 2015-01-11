@@ -6,7 +6,7 @@
 #include <QPainter>
 #include <QSet>
 #include <QSvgGenerator>
-#include <boloq/boolean_function.h>
+#include <boloq.h>
 #include <boloq/io.h>
 using namespace boloq;
 
