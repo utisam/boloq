@@ -90,7 +90,7 @@ public:
             return it->second.lock();
         }
         // 存在しなければ新しく生成
-        const node_ptr pf(new node(igen.get_index(key) + 2, _label, t, e));
+        const node_ptr pf(new node_type(igen.get_index(key) + 2, _label, t, e));
         unique_table[key] = pf; // 登録
         return pf;
     }
