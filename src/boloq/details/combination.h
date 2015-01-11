@@ -167,11 +167,6 @@ public:
 
 };
 
-/*!
- * @brief 標準的なノードを用いる組み合わせ集合です
- */
-using combination = basic_combination<combination_cache>;
-
 }
 
 namespace std {

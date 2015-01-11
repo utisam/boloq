@@ -1,6 +1,4 @@
 #pragma once
-#include <boloq/boolean_function.h>
-#include <boloq/combination.h>
 #include <boloq/details/visitors/io.h>
 
 namespace std {

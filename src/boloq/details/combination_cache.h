@@ -184,9 +184,4 @@ public:
 
 };
 
-/*!
- * @brief 標準的なノードを用いるハッシュテーブルです
- */
-using combination_cache = basic_combination_cache<node>;
-
 }

@@ -175,9 +175,4 @@ public:
     }
 };
 
-/*!
- * @brief 標準的なノードを用いるハッシュテーブルです
- */
-using boolean_function_cache = basic_boolean_function_cache<node>;
-
 }

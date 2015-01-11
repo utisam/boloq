@@ -1,11 +1,18 @@
 #pragma once
-#include <memory>
-#include <tuple>
-#include <unordered_map>
-#include <boost/functional/hash.hpp>
-#include <boloq/details/node.h>
-#include <boloq/details/tuple_hash.h>
-#include <boloq/details/index_generator.h>
+#include <boloq/common.h>
 #include <boloq/details/combination_cache.h>
-#include <boloq/details/visitors/execute.h>
 #include <boloq/details/combination.h>
+
+namespace boloq {
+
+/*!
+ * @brief 標準的なノードを用いるハッシュテーブルです
+ */
+using combination_cache = basic_combination_cache<node>;
+
+/*!
+ * @brief 標準的なノードを用いる組み合わせ集合です
+ */
+using combination = basic_combination<combination_cache>;
+
+}

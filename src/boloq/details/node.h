@@ -89,11 +89,6 @@ public:
 };
 
 /*!
- * @brief 標準的なノードのクラス
- */
-using node = basic_node<size_t, size_t>;
-
-/*!
  * @brief 定節点用のdeleter
  */
 struct null_deleter {

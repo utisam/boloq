@@ -205,11 +205,6 @@ public:
 
 };
 
-/*!
- * @brief 標準的なノードを用いる論理関数です
- */
-using boolean_function = basic_boolean_function<boolean_function_cache>;
-
 }
 
 namespace std {
