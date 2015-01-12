@@ -28,9 +28,12 @@ private:
     index_generator<unique_key_type, index_type> igen;
 
     std::unordered_map<unique_key_type, cache_ptr> unique_table;
+    std::unordered_map<change_key_type, cache_ptr> offset_table;
+    std::unordered_map<change_key_type, cache_ptr> onset_table;
     std::unordered_map<change_key_type, cache_ptr> change_table;
     std::unordered_map<bin_op_key_type, cache_ptr> union_table;
     std::unordered_map<bin_op_key_type, cache_ptr> intersection_table;
+    std::unordered_map<bin_op_key_type, cache_ptr> join_table;
 
     const node_type __terminal_false, __terminal_true;
     const node_ptr terminal_false, terminal_true;
@@ -50,12 +53,10 @@ private:
     }
 
     /*!
-     * 可換な二項演算のための検索キーを生成します
+     * 二項演算のための検索キーを生成します
      */
     static bin_op_key_type make_bin_op_key(const node_ptr& p, const node_ptr& q) {
-        // キャッシュのヒット率を向上させる
-        auto m = std::minmax(p->index(), q->index());
-        return std::make_tuple(std::get<0>(m), std::get<1>(m));
+        return std::make_tuple(p->index(), q->index());
     }
 
 public:
@@ -105,6 +106,36 @@ public:
      */
     const node_ptr new_var(const label_type& _label) {
         return new_var(_label, one(), zero());
+    }
+
+    const node_ptr apply_offset(const node_ptr& _root, const label_type& v) {
+        if (_root->label() == v) return _root->else_node();
+        if (_root->label() > v) return _root;
+        const auto key = make_change_key(_root, v);
+        const auto it = offset_table.find(key);
+        if (it != offset_table.end() && !it->second.expired()) {
+            return it->second.lock();
+        }
+        const node_ptr& r = new_var(_root->label(),
+                                   apply_offset(_root->then_node(), v),
+                                   apply_offset(_root->else_node(), v));
+        offset_table[key] = r;
+        return r;
+    }
+
+    const node_ptr apply_onset(const node_ptr& _root, const label_type& v) {
+        if (_root->label() == v) return _root->then_node();
+        if (_root->label() > v) return zero();
+        const auto key = make_change_key(_root, v);
+        const auto it = onset_table.find(key);
+        if (it != onset_table.end() && !it->second.expired()) {
+            return it->second.lock();
+        }
+        const node_ptr& r = new_var(_root->label(),
+                                   apply_onset(_root->then_node(), v),
+                                   apply_onset(_root->else_node(), v));
+        onset_table[key] = r;
+        return r;
     }
 
     /*!
@@ -187,6 +218,40 @@ public:
         return r;
     }
 
+    const node_ptr apply_join(const node_ptr& p, const node_ptr& q) {
+        if (p == zero() || q == zero()) return zero();
+        if (p == one()) return q;
+        if (q == one()) return p;
+
+        auto m = std::minmax(p, q, [](const node_ptr& a, const node_ptr& b) {
+            return a->label() < b->label();
+        });
+        const node_ptr& f = std::get<0>(m), g = std::get<1>(m);
+
+        const auto key = make_bin_op_key(f, g);
+        const auto it = join_table.find(key);
+        if (it != join_table.end() && !it->second.expired()) {
+            return it->second.lock();
+        }
+
+        const auto f1 = apply_onset(f, f->label());
+        const auto f0 = apply_offset(f, f->label());
+        node_ptr r;
+        if (f->label() == g->label()) {
+            const auto g1 = apply_onset(g, g->label());
+            const auto g0 = apply_offset(g, g->label());
+            r = apply_union(apply_change(
+                    // (f1 * g1) + (f1 * g0) + (f0 * g1)
+                    apply_union(apply_union(apply_join(f1, g1), apply_join(f1, g0)), apply_join(f0, g1)),
+                f->label()), apply_join(f0, g0));
+        }
+        else {
+            r = apply_union(apply_change(apply_join(f1, g), f->label()), apply_join(f0, g));
+        }
+
+        join_table[key] = r;
+        return r;
+    }
 };
 
 }

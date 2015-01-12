@@ -91,6 +91,30 @@ BOOST_AUTO_TEST_SUITE_END()
 
 BOOST_AUTO_TEST_SUITE(boloq_combination_test)
 
+BOOST_AUTO_TEST_CASE(test_offset) {
+    combination x('x'), y('y'); // { x }, { y }
+    auto f = (x + y); // { x, y }
+    BOOST_REQUIRE_EQUAL(f.offset('x'), y);
+    BOOST_REQUIRE_EQUAL(f.offset('y'), x);
+    BOOST_REQUIRE_EQUAL(f.offset('z'), f);
+    auto xy = x.changed('y'); // { xy }
+    BOOST_REQUIRE_EQUAL(xy.offset('x'), combination::zero());
+    BOOST_REQUIRE_EQUAL(xy.offset('y'), combination::zero());
+    BOOST_REQUIRE_EQUAL(xy.offset('z'), xy);
+}
+
+BOOST_AUTO_TEST_CASE(test_onset) {
+    combination x('x'), y('y');
+    auto f = (x + y);
+    BOOST_REQUIRE_EQUAL(f.onset('x'), combination::one());
+    BOOST_REQUIRE_EQUAL(f.onset('y'), combination::one());
+    BOOST_REQUIRE_EQUAL(f.onset('z'), combination::zero());
+    auto xy = x.changed('y');
+    BOOST_REQUIRE_EQUAL(xy.onset('x'), y);
+    BOOST_REQUIRE_EQUAL(xy.onset('y'), x);
+    BOOST_REQUIRE_EQUAL(xy.onset('z'), combination::zero());
+}
+
 BOOST_AUTO_TEST_CASE(test_change) {
     auto f = combination::one();
     f.change('x');
@@ -117,6 +141,14 @@ BOOST_AUTO_TEST_CASE(test_intersection) {
     for (auto& a : assigns) {
         BOOST_REQUIRE_EQUAL(f.contain(a), (a['x'] && a['y']));
     }
+}
+
+BOOST_AUTO_TEST_CASE(test_join) {
+    combination x('x'), y('y');
+    auto xy = x * y;
+    BOOST_REQUIRE_EQUAL(xy, x.changed('y'));
+    BOOST_REQUIRE_EQUAL(xy * x * y, x.changed('y'));
+    BOOST_REQUIRE_EQUAL((xy + x + y) * x * y, x.changed('y'));
 }
 
 BOOST_AUTO_TEST_CASE(test_construction) {

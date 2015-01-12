@@ -70,6 +70,20 @@ public:
     }
 
     /*!
+     * @brief v を含まない組合せを集めた部分集合を返す
+     */
+    self_type offset(const label_type& v) {
+        return self_type(table().apply_offset(_root, v));
+    }
+
+    /*!
+     * @brief v を含む組合せから v を取り除いた集合を返す
+     */
+    self_type onset(const label_type& v) {
+        return self_type(table().apply_onset(_root, v));
+    }
+
+    /*!
      * @brief 特定のアイテムの存在を反転させます
      */
     self_type& change(const label_type& v) {
@@ -144,6 +158,21 @@ public:
      */
     self_type& operator&=(const self_type& o) {
         _root = table().apply_intersection(_root, o._root);
+        return *this;
+    }
+
+    /*!
+     * @brief join を行った結果を返します
+     */
+    self_type operator*(const self_type& o) const {
+        return self_type(table().apply_join(_root, o._root));
+    }
+
+    /*!
+     * @brief join を適用します
+     */
+    self_type& operator*=(const self_type& o) {
+        _root = table().apply_join(_root, o.root);
         return *this;
     }
 
