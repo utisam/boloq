@@ -144,11 +144,21 @@ BOOST_AUTO_TEST_CASE(test_intersection) {
 }
 
 BOOST_AUTO_TEST_CASE(test_join) {
-    combination x('x'), y('y');
+    combination x('x'), y('y'), z('z'), w('w');
     auto xy = x * y;
     BOOST_REQUIRE_EQUAL(xy, x.changed('y'));
     BOOST_REQUIRE_EQUAL(xy * x * y, x.changed('y'));
     BOOST_REQUIRE_EQUAL((xy + x + y) * x * y, x.changed('y'));
+
+    count_visitor<combination, size_t> cv;
+    // {xz, xw, yz, yw}
+    BOOST_REQUIRE_EQUAL(((x + y) * (z + w)).accept(cv), 4);
+}
+
+BOOST_AUTO_TEST_CASE(test_meet) {
+    combination x('x'), y('y'), z('z');
+    auto f = x * y + x * z;
+    BOOST_REQUIRE_EQUAL(f.meet(y * z), y + z);
 }
 
 BOOST_AUTO_TEST_CASE(test_construction) {

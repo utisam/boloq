@@ -34,6 +34,7 @@ private:
     std::unordered_map<bin_op_key_type, cache_ptr> union_table;
     std::unordered_map<bin_op_key_type, cache_ptr> intersection_table;
     std::unordered_map<bin_op_key_type, cache_ptr> join_table;
+    std::unordered_map<bin_op_key_type, cache_ptr> meet_table;
 
     const node_type __terminal_false, __terminal_true;
     const node_ptr terminal_false, terminal_true;
@@ -238,8 +239,8 @@ public:
         const auto f0 = apply_offset(f, f->label());
         node_ptr r;
         if (f->label() == g->label()) {
-            const auto g1 = apply_onset(g, g->label());
-            const auto g0 = apply_offset(g, g->label());
+            const auto g1 = apply_onset(g, f->label());
+            const auto g0 = apply_offset(g, f->label());
             r = apply_union(apply_change(
                     // (f1 * g1) + (f1 * g0) + (f0 * g1)
                     apply_union(apply_union(apply_join(f1, g1), apply_join(f1, g0)), apply_join(f0, g1)),
@@ -252,6 +253,44 @@ public:
         join_table[key] = r;
         return r;
     }
+
+    const node_ptr apply_meet(const node_ptr& p, const node_ptr& q) {
+        if (p == zero() || q == zero()) return zero();
+        if (p == one() || q == one()) return one();
+
+        auto m = std::minmax(p, q, [](const node_ptr& a, const node_ptr& b) {
+            return (a->label() != b->label()) ?
+                a->label() < b->label() :
+                a->index() < b->index();
+        });
+        const node_ptr& f = std::get<0>(m), g = std::get<1>(m);
+
+        const auto key = make_bin_op_key(f, g);
+        const auto it = meet_table.find(key);
+        if (it != meet_table.end() && !it->second.expired()) {
+            return it->second.lock();
+        }
+
+        const auto f1 = apply_onset(f, f->label());
+        const auto f0 = apply_offset(f, f->label());
+        node_ptr r;
+        if (f->label() == g->label()) {
+            const auto g1 = apply_onset(g, f->label());
+            const auto g0 = apply_offset(g, f->label());
+            r = apply_union(apply_union(apply_union(
+                    apply_change(apply_meet(f1, g1), f->label()),
+                    apply_meet(f0, g0)),
+                    apply_meet(f1, g0)),
+                    apply_meet(f0, g1));
+        }
+        else {
+            r = apply_union(apply_meet(f0, g), apply_meet(f1, g));
+        }
+
+        meet_table[key] = r;
+        return r;
+    }
+
 };
 
 }

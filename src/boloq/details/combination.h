@@ -169,6 +169,10 @@ public:
         return *this;
     }
 
+    self_type meet(const self_type& o) const {
+        return self_type(table().apply_meet(_root, o._root));
+    }
+
     /*!
      * @brief visitorを受理します
      *
