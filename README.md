@@ -1,6 +1,6 @@
 # boloq
 
-BDD/ZDD library to replesent binary functions using modern C++ futures
+BDD/ZDD library to replesent boolean functions using modern C++ futures
 
 ## Getting started
 
