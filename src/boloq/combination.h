@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <boloq/common.h>
 #include <boloq/details/combination_cache.h>
 #include <boloq/details/combination.h>

@@ -49,8 +49,13 @@ private:
         return std::make_tuple(n->index(), l);
     }
 
+    /*!
+     * 可換な二項演算のための検索キーを生成します
+     */
     static bin_op_key_type make_bin_op_key(const node_ptr& p, const node_ptr& q) {
-        return std::make_tuple(p->index(), q->index());
+        // キャッシュのヒット率を向上させる
+        auto m = std::minmax(p->index(), q->index());
+        return std::make_tuple(std::get<0>(m), std::get<1>(m));
     }
 
 public:
