@@ -14,6 +14,7 @@ class io_visitor {
     unsigned int indent_level;
 
 public:
+    using result_type = std::ostream&;
 
     /*!
      * @brief コンストラクタ
@@ -27,7 +28,7 @@ public:
     /*!
      * @brief ノードを表示して、子を再帰的に呼び出します
      */
-    void operator()(const node_ptr& n) {
+    result_type operator()(const node_ptr& n) {
         for (unsigned int i = 0; i < indent_level; i++) {
             ost << '\t';
         }
@@ -39,6 +40,8 @@ public:
             n->else_node()->accept(*this);
             indent_level--;
         }
+
+        return ost;
     }
 
 };

@@ -33,13 +33,6 @@ private:
         return instance;
     }
 
-    template<class V, typename R, typename ...Args>
-    R visit_result(const Args& ...args) const {
-        V v(args...);
-        this->accept(v);
-        return v.result();
-    }
-
 public:
 
     basic_boolean_function() : _root(nullptr) {}
@@ -156,8 +149,12 @@ public:
      * visitorオブジェクトは、node_ptrを引数にした関数インタフェースをもたなくてはいけません
      */
     template<class V>
-    void accept(V& visitor) const {
-        _root->accept(visitor);
+    typename V::result_type accept(V& visitor) const {
+        return _root->accept(visitor);
+    }
+    template<class V>
+    typename V::result_type accept(const V& visitor) const {
+        return _root->accept(visitor);
     }
 
     /*!
@@ -165,42 +162,42 @@ public:
      */
     template<class AssignT>
     bool execute(const AssignT& assign) const {
-        return visit_result<execute_visitor<self_type, AssignT>, bool>(assign);
+        return accept(execute_visitor<self_type, AssignT>(assign));
     }
 
     /*!
      * @brief f(x) = x かどうかを判定します
      */
     bool is_wire() const {
-        return visit_result<is_wire_visitor<self_type>, bool>();
+        return accept(is_wire_visitor<self_type>());
     }
 
     /*!
      * @brief 論理否定を表すかどうかを判定します
      */
     bool is_negation() const {
-        return visit_result<is_negation_visitor<self_type>, bool>();
+        return accept(is_negation_visitor<self_type>());
     }
 
     /*!
      * @brief 論理積を表すかどうかを判定します
      */
     bool is_conjunction() const {
-        return visit_result<is_conjunction_visitor<self_type>, bool>();
+        return accept(is_conjunction_visitor<self_type>());
     }
 
     /*!
      * @brief 論理和を表すかどうかを判定します
      */
     bool is_disjunction() const {
-        return visit_result<is_disjunction_visitor<self_type>, bool>();
+        return accept(is_disjunction_visitor<self_type>());
     }
 
     /*!
      * @brief 排他的論理和を表すかどうかを判定します
      */
     bool is_exclusive_disjunction() const {
-        return visit_result<is_exclusive_disjunction_visitor<self_type>, bool>();
+        return accept(is_exclusive_disjunction_visitor<self_type>());
     }
 
 };

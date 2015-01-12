@@ -55,6 +55,8 @@ class GraphGenerateVisitor {
     QSet<index_type> visited;
 
 public:
+    using result_type = void;
+
     GraphGenerateVisitor() {}
 
     void operator()(const node_ptr& node) {
@@ -114,6 +116,7 @@ int main(int argc, char **argv) {
     boolean_function x('x');
     boolean_function y('y');
     auto f = x & y;
+    std::cout << f << std::endl;
 
     GraphGenerateVisitor visitor;
     f.accept(visitor);

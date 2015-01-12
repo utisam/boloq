@@ -163,6 +163,9 @@ BOOST_AUTO_TEST_CASE(test_construction) {
     for (auto& a : assigns) {
         BOOST_REQUIRE_EQUAL(f.contain(a), (!a['a'] && !a['b']) || (!a['a'] && !a['c'] && !a['d']));
     }
+
+    count_visitor<combination, size_t> cv;
+    BOOST_REQUIRE_EQUAL(f.accept(cv), 5);
 }
 
 BOOST_AUTO_TEST_CASE(test_hash_test) {
@@ -181,6 +184,17 @@ BOOST_AUTO_TEST_CASE(test_hash_test) {
 
     unordered_set<combination> fn_set(fns.begin(), fns.end());
     BOOST_REQUIRE_EQUAL(fn_set.size(), 1);
+}
+
+BOOST_AUTO_TEST_CASE(test_count) {
+    count_visitor<combination, size_t> cv;
+
+    combination x('x'), y('y'); // { x }, { y }
+    auto f = (x + y); // { x, y }
+
+    BOOST_REQUIRE_EQUAL(x.accept(cv), 1);
+    BOOST_REQUIRE_EQUAL(y.accept(cv), 1);
+    BOOST_REQUIRE_EQUAL(f.accept(cv), 2);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

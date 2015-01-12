@@ -13,9 +13,10 @@ private:
     using assign_type = AssignT;
 
     const assign_type& _assign;
-    bool _result;
 
 public:
+    using result_type = bool;
+
     /*!
      * @brief 割り当てを設定して生成します
      */
@@ -24,20 +25,14 @@ public:
     /*!
      * @brief ノードを評価して、子を再帰的に呼び出します
      */
-    void operator()(const node_ptr& n) {
+    bool operator()(const node_ptr& n) const {
         if (n->is_terminal()) {
-            _result = n->index();
-            return;
+            return n->index();
         }
         const node_ptr& next = (_assign.at(n->label())) ?
             n->then_node() : n->else_node();
-        next->accept(*this);
+        return next->accept(*this);
     }
-
-    /*!
-     * @brief 結果を取得します
-     */
-    bool result() const {return _result;}
 };
 
 /*!
@@ -50,9 +45,10 @@ private:
     using assign_type = AssignT;
 
     const assign_type* _assign;
-    bool _result;
 
 public:
+    using result_type = bool;
+
     /*!
      * @brief 割り当てを設定して生成します
      */
@@ -61,20 +57,15 @@ public:
     /*!
      * @brief ノードを評価して、子を再帰的に呼び出します
      */
-    void operator()(const node_ptr& n) {
+    bool operator()(const node_ptr& n) const {
         if (n->is_terminal()) {
-            _result = n->index();
-            return;
+            return n->index();
         }
         const node_ptr& next = (_assign[n->label()]) ?
             n->then_node() : n->else_node();
-        next->accept(*this);
+        return next->accept(*this);
     }
 
-    /*!
-     * @brief 結果を取得します
-     */
-    bool result() const {return _result;}
 };
 
 /*!
@@ -88,9 +79,10 @@ private:
     using value_type = std::pair<typename T::label_type, bool>;
 
     std::priority_queue<value_type, std::vector<value_type>, std::greater<value_type>> _assign;
-    bool _result;
 
 public:
+    using result_type = bool;
+
     /*!
      * @brief 割り当てを設定して生成します
      */
@@ -99,31 +91,26 @@ public:
     /*!
      * @brief ノードを評価して、子を再帰的に呼び出します
      */
-    void operator()(const node_ptr& n) {
+    bool operator()(const node_ptr& n) {
         if (_assign.empty() && n->is_terminal()) {
-            _result = n->index();
-            return;
+            return n->index();
         }
 
         if (n->label() == _assign.top().first) {
             auto& next = (_assign.top().second) ? n->then_node() : n->else_node();
             _assign.pop();
-            next->accept(*this);
+            return next->accept(*this);
         }
         else if (n->label() > _assign.top().first) {
             if (_assign.top().second) {
-                _result = false;
-                return;
+                return false;
             }
             _assign.pop();
-            n->accept(*this);
+            return n->accept(*this);
         }
+        return false;
     }
 
-    /*!
-     * @brief 結果を取得します
-     */
-    bool result() const {return _result;}
 };
 
 }

@@ -37,13 +37,6 @@ private:
         return instance;
     }
 
-    template<class V, typename R, typename ...Args>
-    R visit_result(const Args& ...args) const {
-        V v(args...);
-        this->accept(v);
-        return v.result();
-    }
-
 public:
 
     basic_combination() : _root(nullptr) {}
@@ -182,8 +175,12 @@ public:
      * visitorオブジェクトは、node_ptrを引数にした関数インタフェースをもたなくてはいけません
      */
     template<class V>
-    void accept(V& visitor) const {
-        _root->accept(visitor);
+    typename V::result_type accept(V& visitor) const {
+        return _root->accept(visitor);
+    }
+    template<class V>
+    typename V::result_type accept(const V& visitor) const {
+        return _root->accept(visitor);
     }
 
     /*!
@@ -191,7 +188,8 @@ public:
      */
     template<class AssignT>
     bool contain(const AssignT& assign) const {
-        return visit_result<contain_visitor<self_type, AssignT>, bool>(assign);
+        contain_visitor<self_type, AssignT> v(assign);
+        return accept(v);
     }
 
 };

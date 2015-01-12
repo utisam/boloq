@@ -83,8 +83,12 @@ public:
      * @brief visitorを受理します
      */
     template<class V>
-    void accept(V& visitor) const {
-        visitor(self());
+    typename V::result_type accept(V& visitor) const {
+        return visitor(self());
+    }
+    template<class V>
+    typename V::result_type accept(const V& visitor) const {
+        return visitor(self());
     }
 };
 
