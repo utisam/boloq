@@ -26,7 +26,6 @@ private:
 
     using unique_table_type = std::unordered_map<unique_key_type, cache_ptr>;
     using compute_table_type = std::unordered_map<compute_key_type, cache_ptr>;
-    using index_table_type = std::unordered_map<unique_key_type, index_type>;
 
     const node_type __terminal_false, __terminal_true;
     const node_ptr terminal_false, terminal_true;
