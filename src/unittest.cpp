@@ -99,7 +99,7 @@ BOOST_AUTO_TEST_CASE(test_change) {
     for (auto& a : assigns) BOOST_REQUIRE_EQUAL(f.contain(a), a['x']);
 }
 
-BOOST_AUTO_TEST_CASE(test_or) {
+BOOST_AUTO_TEST_CASE(test_union) {
     combination x('x'), y('y');
     auto f = x + y + x.changed('y');
 
@@ -109,7 +109,7 @@ BOOST_AUTO_TEST_CASE(test_or) {
     }
 }
 
-BOOST_AUTO_TEST_CASE(test_and) {
+BOOST_AUTO_TEST_CASE(test_intersection) {
     combination f('x');
     f.change('y');
 
