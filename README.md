@@ -8,6 +8,7 @@ BDD/ZDD library to replesent boolean functions using modern C++ futures
 
 * C++11
 * boost
+* CMake
 
 ### Install
 
