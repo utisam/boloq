@@ -1,4 +1,4 @@
-boloq - BDD/ZDD library using modern C++ futures
+boloq - BDD/ZDD library using modern C++ features
 
 Copyright 2015 by Masatoshi Tsushima
 
