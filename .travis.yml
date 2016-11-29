@@ -1,2 +1,6 @@
 language: cpp
+addons:
+  apt:
+    packages:
+    - cmake
 script: cd build && cmake .. && make -j4
