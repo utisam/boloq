@@ -1,5 +1,7 @@
 # boloq
 
+[![Build Status](https://travis-ci.org/utisam/boloq.svg?branch=master)](https://travis-ci.org/utisam/boloq)
+
 BDD/ZDD library to replesent boolean functions using modern C++ features
 
 ## Getting started
