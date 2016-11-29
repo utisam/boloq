@@ -3,4 +3,5 @@ addons:
   apt:
     packages:
     - cmake
+    - libboost-test-dev
 script: cd build && cmake .. && make -j4
